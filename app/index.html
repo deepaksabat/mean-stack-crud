@@ -9,7 +9,9 @@
  
  <script src="app.js"></script>
  <script src="services/service.js"></script>
+ <script src="services/studentservice.js"></script>
  <script src="controllers/user.controller.js"></script>
+ <script src="controllers/student.controller.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -18,8 +20,8 @@
  <a class="navbar-brand" ui-sref="users">MEAN CRUD</a>
  </div>
  <ul class="nav navbar-nav">
- <li><a ui-sref="users">Home</a></li>
- <li><a ui-sref="create">Create</a></li>
+ <li><a ui-sref="create" class="btn btn-success">Create</a></li>
+ <li><a ui-sref="studentcreate" class="btn btn-success">StudentCreate</a></li>
  </ul>
  </div>
 </nav>

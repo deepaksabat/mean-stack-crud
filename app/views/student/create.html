@@ -1,0 +1,49 @@
+
+<h2 ng-show="student._id!=null">Edit</h2>
+<h2 ng-hide="student._id!=null">Create</h2>
+<hr>
+<form name="studentForm" ng-submit="saveData(student)" novalidate class="form-horizontal">
+ <div class="form-group">
+ <label class="col-md-2">Name</label>
+ <div class="col-md-10">
+ <input type="text" ng-model="student.name" name="name" ng-required="true" ng-maxlength="20" class="form-control"/>
+ <p ng-show="studentForm.name.$error.required && (studentForm.$submitted || studentForm.name.$dirty)" class="text-danger">Please Enter Name</p>
+ </div>
+ </div>
+ <div class="form-group">
+ <label class="col-md-2">RollNo</label>
+ <div class="col-md-10">
+ <input type="text" ng-model="student.rollno" name="rollno" ng-required="true" ng-maxlength="6" class="form-control"/>
+ <p ng-show="studentForm.rollno.$error.required && (studentForm.$submitted || studentForm.rollno.$dirty)" class="text-danger">Please Enter RollNo</p>
+ </div>
+ </div>
+ <div class="form-group">
+ <label class="col-md-2">Gender</label>
+ <div class="col-md-10">
+ <input type="radio" ng-model="student.gender" value="male" >Male
+<input type="radio" ng-model="student.gender" value="female">Female
+ <p ng-show="studentForm.gender.$error.required && (studentForm.$submitted || studentForm.gender.$dirty)" class="text-danger">Please select Gender</p>
+ </div>
+ </div>
+ <div class="form-group">
+ <label class="col-md-2">Address</label>
+ <div class="col-md-10">
+ <textarea name="address" ng-model="student.address" ng-required="true" class="form-control"></textarea>
+ <p ng-show="studentForm.address.$error.required && (studentForm.$submitted || studentForm.address.$dirty)" class="text-danger">Please Enter Address</p>
+ </div>
+ </div>
+ <div class="form-group">
+ <label class="col-md-2">Contact No.</label>
+ <div class="col-md-10">
+ <input type="text" ng-model="student.contactNo" name="contactNo" ng-required="true" ng-maxlength="10" class="form-control"/>
+ <p ng-show="studentForm.contactNo.$error.required && (studentForm.$submitted || studentForm.contactNo.$dirty)" class="text-danger">Please Enter Contact No.</p>
+ </div>
+ </div>
+ <div class="form-group">
+ <div class="col-md-offset-2 col-md-10">
+ <input type="submit" value="Update" class="btn btn-primary" ng-show="student._id!=null"/>
+ <input type="submit" value="Save" class="btn btn-primary" ng-hide="student._id!=null"/>
+ <a ui-sref="students" class="btn btn-warning">Cancel</a>
+ </div>
+ </div>
+</form>

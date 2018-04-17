@@ -3,6 +3,8 @@ var express = require('express'),
  
 //routes for user api
 router.use("/user", require("../controllers/user.api"));
+
+router.use("/student", require("../controllers/student.api"));
  
 //add here other api routes
  
